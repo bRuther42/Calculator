@@ -1,0 +1,108 @@
+html,body{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to right, #640928, #f1739b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: bold;
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    outline: 3px outset rgba(28, 38, 65, .7);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.calculator-grid > button:hover{
+    background-color: #a9a9a9;
+}
+
+button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+button:nth-of-type(2){
+    background-color: rgba(155, 157, 233, .9);
+    color: white;
+}
+
+button:nth-of-type(2):hover{
+    background-color: rgba(186, 184, 247, 1);
+}
+
+button:nth-of-type(3), button:nth-of-type(7), button:nth-of-type(11), button:nth-of-type(15), button:nth-of-type(16){
+    background-color: rgba(84, 92, 146,.7);
+    color: white;
+}
+
+button:nth-of-type(3):hover, button:nth-of-type(7):hover, button:nth-of-type(11):hover, button:nth-of-type(15):hover, button:nth-of-type(16):hover{
+ background-color: rgba(186, 184, 247, 1);
+}
+
+#span-two{
+    grid-column: span 2;
+    color: white;
+    background-color: rgba(155, 157, 233, .9);
+}
+
+#span-two:hover{
+    background-color: rgba(186, 184, 247, 1);
+}
+
+.output{
+    grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: 1.5rem;
+    min-height: 60px;
+    border-radius: 10px;
+    outline: 8px inset rgba(28, 38, 65, 1);
+}
+
+.output .previous-operand{
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: white;
+    font-size: 2.5rem;
+}
+
+#background-box{
+    background-color: rgba(28, 38, 65, .8);
+    position: relative;
+    min-width: 450px;
+    min-height: 630px;
+    border-radius: 10px;
+    border: 10px outset rgba(28, 38, 65, 1);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.8), 0 8px 22px 0 rgba(0,0,0,0.6);
+}
